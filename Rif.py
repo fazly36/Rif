@@ -352,7 +352,7 @@ def file():
 				back()
 
 # DUMP ID PUBLIK
-	def dump_publik(self, user, token):
+	def dump_publik():
 		try:
 			po = requests.get(f'https://graph.facebook.com/{user}?fields=name,friends.fields(id,name).limit(5000)&access_token={token}').json()
 			for i in po['friends']['data']:
