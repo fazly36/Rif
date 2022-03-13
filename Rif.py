@@ -351,7 +351,7 @@ def file():
 				time.sleep(2)
 				back()
 
-# CRACK PUBLIK 
+# DUMP ID PUBLIK
 	def PublikGRAPH(self, user, token):
 		try:
 			po = requests.get(f'https://graph.facebook.com/{user}?fields=name,friends.fields(id,name).limit(5000)&access_token={token}').json()
