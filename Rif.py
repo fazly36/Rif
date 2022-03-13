@@ -363,7 +363,7 @@ def dump_publik():
 	print(x+'['+h+'•'+x+'] Ketik "me" Jika Ingin Dump ID Dari Teman')
 	pil = input(x+'['+p+'f'+x+'] Masukkan ID Target : ')
 	try:
-		koh = requests.get('https://mbasic.facebook.com/'+pil+'?access_token='+token)
+		koh = requests.get('https://graph.facebook.com/'+pil+'?access_token='+token)
 		grex = json.loads(koh.text)['name']
 		kras = '# INFO TARGET'
 		kras2 = mark(kras, style='green')
@@ -381,7 +381,7 @@ def dump_publik():
 		sol().print(lo, style='cyan')
 		exit()
 	try:
-		koh2 = requests.get('https://mbasic.facebook.com/'+pil+'/friends?limit=5000&access_token='+token)
+		koh2 = requests.get('https://graph.facebook.com/'+pil+'/friends?limit=5000&access_token='+token)
 		koh3 = json.loads(koh2.text)
 		for pi in koh3['data']:
 			try:id.append(pi['id']+'|'+pi['name'])
